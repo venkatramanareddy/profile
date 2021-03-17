@@ -1,0 +1,71 @@
+.terminal{
+    background-color: black;
+    color: green;
+    border-color: white;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 120%;
+    font-weight: 700;
+}
+
+.subDisclaimer{
+    font-size: 80%;
+}
+
+.terminalInputArea{
+    background-color: black;
+    color: green;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+.terminalCursor{
+    padding-right: 10px;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 120%;
+    font-weight: 700;
+}
+
+.terminalInputBox{
+    background-color: black;
+    border: 0;
+    color: green;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 120%;
+    font-weight: 700;
+    width: inherit;
+}
+
+.terminalInputBox:focus{
+    outline: none;
+}
+
+.terminalOutputArea{
+    background-color: black;
+    color: green;   
+    top: 0;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    position: absolute;   
+    overflow-y: auto; 
+}
+
+.tr{
+    overflow-wrap: break-word;
+    font-size: 150%;
+}
+
+.tr-general{
+    text-align: left;
+}
+
+.tr-disclaimer{
+    text-align: center;
+}

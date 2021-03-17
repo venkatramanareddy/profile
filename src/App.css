@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.mainLayer {
+  background-color: black;
+  color: greenyellow;
+}
+
+.foxLayer {
+  background-color: cornsilk;
+  min-height: fit-content;
+}
+
+.foxImage {
+  padding-right: 0;
+}
