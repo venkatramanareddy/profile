@@ -77,12 +77,25 @@ class Terminal extends React.Component{
         let rowData = {id: getUniqueRowId()}
         if(this.props.responseList.commandList != null 
             && this.props.responseList.commandList.length >= 0){
-
             let matchingResult = this.props.responseList.commandList.find(o=> o.command === inputCommand)
             if(matchingResult != null){
                 Object.assign(rowData,{        
                     type: "generalResponse",
                     data: matchingResult.response
+                });
+                return rowData;
+            }
+        }
+
+        if(this.props.responseList.colorPallete != null 
+            && this.props.responseList.colorPallete.length >= 0){
+            let matchingResult = this.props.responseList.colorPallete.find(o=> o === inputCommand);
+            if(matchingResult != null){
+                // raise color change event
+                this.onThemeChange(matchingResult);
+                Object.assign(rowData,{        
+                    type: "generalResponse",
+                    data: "You've found an easter egg! Theme changed successfully!"
                 });
                 return rowData;
             }
@@ -101,6 +114,16 @@ class Terminal extends React.Component{
             });
         }
         return rowData;
+    }
+
+    onThemeChange(colorData){
+        let initialStyle = {
+            "backgroundColor": "black",
+            "color": colorData
+        };
+        this.setState({
+            customStyle: initialStyle
+        })
     }
 
     updatePrompt(rowData){
