@@ -74,7 +74,7 @@ class Terminal extends React.Component{
     }
 
     getCorrespondingCommandOutput(inputCommand){
-        let rowData = {id: getUniqueRowId()}
+        let rowData = {id: getUniqueRowId(), executedCommand: inputCommand}
         if(this.props.responseList.commandList != null 
             && this.props.responseList.commandList.length >= 0){
             let matchingResult = this.props.responseList.commandList.find(o=> o.command === inputCommand)
@@ -171,7 +171,6 @@ class Terminal extends React.Component{
         }
     }
     createRowElement(element){
-        // I know index is not right for using key, but in my case I can live with it
         if(element.type === "generalResponse" || element.type === "errorResponse"){
             return <div key={element.id}
                     ref={el=> {this.el = el;}} 
